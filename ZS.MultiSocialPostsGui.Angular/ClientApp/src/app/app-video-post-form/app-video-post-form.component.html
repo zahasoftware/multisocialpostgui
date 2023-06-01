@@ -1,0 +1,13 @@
+<form (ngSubmit)="submitForm()" enctype="multipart/form-data">
+    <label for="title">Title</label>
+    <input type="text" id="title" [(ngModel)]="videoPost.title" name="title" required>
+  
+    <label for="description">Description</label>
+    <textarea id="description" [(ngModel)]="videoPost.description" name="description" required></textarea>
+  
+    <label for="video">Video</label>
+    <input type="file" id="video" (change)="onFileSelected($event)" name="video" required>
+  
+    <button type="submit">Submit</button>
+  </form>
+  

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33424.131
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZS.MultiSocialPostsGui", "ZS.MultiSocialPostsGui.csproj", "{FD43CB9E-623C-440D-89C5-A1418C4891F3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZS.MultiSocialPost", "..\..\multisocialpost\ZS.MultiSocialPost\ZS.MultiSocialPost.csproj", "{7C84FE44-DA9E-4646-A746-FAEE9A667761}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FD43CB9E-623C-440D-89C5-A1418C4891F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD43CB9E-623C-440D-89C5-A1418C4891F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD43CB9E-623C-440D-89C5-A1418C4891F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD43CB9E-623C-440D-89C5-A1418C4891F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C84FE44-DA9E-4646-A746-FAEE9A667761}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C84FE44-DA9E-4646-A746-FAEE9A667761}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C84FE44-DA9E-4646-A746-FAEE9A667761}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C84FE44-DA9E-4646-A746-FAEE9A667761}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B6D35CB8-E863-4BA0-9455-EBB53BDF5DB8}
+	EndGlobalSection
+EndGlobal
