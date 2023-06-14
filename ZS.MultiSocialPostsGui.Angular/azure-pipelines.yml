@@ -18,7 +18,16 @@ resources:
 pool:
   vmImage: 'ubuntu-latest'
 
+  
+workspace:
+  clean: all # what to clean up before the job
+
 steps:
+
+- checkout: self
+  path: multisocialpostgui
+- checkout: multisocialpost
+
 - task: CmdLine@2
   inputs:
     script: |
@@ -31,7 +40,7 @@ steps:
     script: |
       echo "CREATING IMAGE"
 
-      ./docker-compose-build.ps1
+      ./multisocialpostgui/ZS.MultiSocialPostsGui.Angular/docker-compose-build.ps1
 
       mkdir -p images
 
