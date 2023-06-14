@@ -40,8 +40,10 @@ steps:
     targetType: 'inline'
     script: |
       echo "CREATING IMAGE"
-
-      ./multisocialpostgui/ZS.MultiSocialPostsGui.Angular/docker-compose-build.ps1
+      
+      push-location /multisocialpostgui/ZS.MultiSocialPostsGui.Angular/
+      .docker-compose-build.ps1
+      pop-location
 
       mkdir -p images
 
