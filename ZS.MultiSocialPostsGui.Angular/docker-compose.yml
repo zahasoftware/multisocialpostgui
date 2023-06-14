@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+
+  #Angular 
+  multisocialpostgui:
+    build:
+      context: ../../
+      dockerfile: ./multisocialpostgui/ZS.MultiSocialPostsGui.Angular/Dockerfile
+    image: multisocialpostgui:1.0
+    environment:
+      - ASPNETCORE_URLS=http://+:80
+    ports:
+      - "80"
+

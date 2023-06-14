@@ -1,0 +1,60 @@
+# ASP.NET
+# Build and test ASP.NET projects.
+# Add steps that publish symbols, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/apps/aspnet/build-aspnet-4
+
+trigger:
+- master
+
+
+resources:
+  repositories:
+  - repository: multisocialpost # The name used to reference this repository in the checkout step
+    type: github
+    endpoint: zahasoftware
+    name: zahasoftware/multisocialpost
+    ref: $(Build.SourceBranchName)
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: CmdLine@2
+  inputs:
+    script: |
+      pwd
+      ls
+
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      echo "CREATING IMAGE"
+
+      ./docker-compose-build.ps1
+
+      mkdir -p images
+
+      docker save -o multisocialpostgui.tar multisocialpostgui:$(cat docker-compose.yml  | grep "multisocialpostgui" | awk -F':'  '{print $3}')
+
+      echo "LS TARS"
+      mv *.tar images/
+      mv *.yml images/
+      ls images
+
+
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: 'images'
+    includeRootFolder: true
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    replaceExistingArchive: true
+
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
+

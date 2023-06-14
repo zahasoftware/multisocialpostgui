@@ -1,10 +1,11 @@
+import { FormsModule } from '@angular/forms';
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-video-post-form',
-  templateUrl: './video-post-form.component.html',
-  styleUrls: ['./video-post-form.component.css']
+  templateUrl: './app-video-post-form.component.html',
+  styleUrls: ['./app-video-post-form.component.css']
 })
 export class VideoPostFormComponent {
   videoPost: any = {};
@@ -20,9 +21,9 @@ export class VideoPostFormComponent {
     const formData: FormData = new FormData();
     formData.append('title', this.videoPost.title);
     formData.append('description', this.videoPost.description);
-    formData.append('video', this.selectedFile, this.selectedFile?.name);
+    formData.append('video', this.selectedFile as Blob, this.selectedFile?.name);
 
-    this.http.post('/api/video-posts', formData).subscribe(
+    this.http.post('/api/multisocialpost/video-post', formData).subscribe(
       response => {
         // Handle success
         console.log('Post created successfully');

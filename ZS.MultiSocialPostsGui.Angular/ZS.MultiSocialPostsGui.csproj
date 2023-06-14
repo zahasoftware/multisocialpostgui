@@ -8,6 +8,10 @@
     <SpaProxyServerUrl>https://localhost:44432</SpaProxyServerUrl>
     <SpaProxyLaunchCommand>npm start</SpaProxyLaunchCommand>
     <ImplicitUsings>enable</ImplicitUsings>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>.</DockerfileContext>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+    <UserSecretsId>763e4fde-f474-45e1-9bbd-a3c7951c4e99</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -27,6 +31,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\multisocialpost\ZS.MultiSocialPost\ZS.MultiSocialPost.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Scripts\" />
   </ItemGroup>
 
     <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

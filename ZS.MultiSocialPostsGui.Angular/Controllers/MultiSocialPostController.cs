@@ -4,7 +4,7 @@ using ZS.MultiSocialPostsGui.Api.Models;
 namespace ZS.MultiSocialPostsGui.Api.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/[controller]")]
 public class MultiSocialPostController : ControllerBase
 {
     private readonly ILogger<MultiSocialPostController> _logger;
@@ -18,6 +18,14 @@ public class MultiSocialPostController : ControllerBase
     }
 
    [HttpPost]
+   [Route("video-post")]
+   [RequestFormLimits
+   (
+        ValueLengthLimit = int.MaxValue,
+        MultipartBodyLengthLimit = long.MaxValue
+   )]
+   [DisableRequestSizeLimit]
+
     public IActionResult CreateVideoPost([FromForm] VideoPostModel videoPost)
     {
         if (videoPost.Video == null || videoPost.Video.Length == 0)

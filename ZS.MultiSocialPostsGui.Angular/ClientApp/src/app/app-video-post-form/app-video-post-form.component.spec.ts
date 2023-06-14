@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AppVideoPostFormComponent } from './app-video-post-form.component';
+import { VideoPostFormComponent } from './app-video-post-form.component';
 
 describe('AppVideoPostFormComponent', () => {
-  let component: AppVideoPostFormComponent;
-  let fixture: ComponentFixture<AppVideoPostFormComponent>;
+  let component: VideoPostFormComponent;
+  let fixture: ComponentFixture<VideoPostFormComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [AppVideoPostFormComponent]
+      declarations: [VideoPostFormComponent]
     });
-    fixture = TestBed.createComponent(AppVideoPostFormComponent);
+    fixture = TestBed.createComponent(VideoPostFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
