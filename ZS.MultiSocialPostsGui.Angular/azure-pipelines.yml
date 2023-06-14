@@ -25,7 +25,7 @@ workspace:
 steps:
 
 - checkout: self
-  path: multisocialpostgui/
+  path: $(Build.SourcesDirectory)/multisocialpostgui/
 - checkout: multisocialpost
 
 - task: CmdLine@2
