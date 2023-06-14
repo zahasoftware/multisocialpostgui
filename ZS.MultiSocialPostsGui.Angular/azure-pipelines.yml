@@ -33,7 +33,7 @@ steps:
     script: |
       pwd
       ls
-      mv ../$(Build.SourcesDirectory)/multisocialpostgui $(Build.SourcesDirectory)/multisocialpostgui
+      mv $(Build.SourcesDirectory)/../multisocialpostgui $(Build.SourcesDirectory)/multisocialpostgui
 
 - task: PowerShell@2
   inputs:
