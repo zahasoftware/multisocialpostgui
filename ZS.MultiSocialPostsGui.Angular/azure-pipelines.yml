@@ -51,13 +51,15 @@ steps:
 
       mkdir -p images
 
-      docker save -o multisocialpostgui.tar multisocialpostgui:$(cat docker-compose.yml  | grep "multisocialpostgui" | awk -F':'  '{print $3}')
+      docker save -o multisocialpostgui.tar multisocialpostgui:$(cat docker-compose.yml  | grep "multisocialpostgui:" | awk -F':'  '{print $3}')
 
       echo "LS TARS"
       mv *.tar images/
       mv *.yml images/
       ls images
       
+      mv images $(Build.SourcesDirectory)/images 
+
       pop-location
 
 
