@@ -41,12 +41,12 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      echo "CREATING IMAGE"
+      echo "Creating Image"
       
       push-location $(Build.SourcesDirectory)/multisocialpostgui/ZS.MultiSocialPostsGui.Angular/
       ls
       docker-compose build multisocialpostgui 
-      pop-location
+      
       ls
 
       mkdir -p images
@@ -57,6 +57,8 @@ steps:
       mv *.tar images/
       mv *.yml images/
       ls images
+      
+      pop-location
 
 
 - task: ArchiveFiles@2
