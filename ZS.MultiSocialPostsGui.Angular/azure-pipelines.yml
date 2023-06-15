@@ -42,7 +42,7 @@ steps:
       echo "CREATING IMAGE"
       
       push-location $(Build.SourcesDirectory)/multisocialpostgui/ZS.MultiSocialPostsGui.Angular/
-      .docker-compose-build.ps1
+      ./docker-compose-build.ps1
       pop-location
 
       mkdir -p images
