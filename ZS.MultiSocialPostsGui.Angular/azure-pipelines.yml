@@ -34,7 +34,7 @@ steps:
       mv $(Build.SourcesDirectory)/../multisocialpostgui $(Build.SourcesDirectory)/multisocialpostgui
       pwd
       ls
-      ls $(Build.SourcesDirectory)/multisocialpostgui
+      ls $(Build.SourcesDirectory)/multisocialpostgui/ZS.MultiSocialPostsGui.Angular/
       
 
 - task: PowerShell@2
