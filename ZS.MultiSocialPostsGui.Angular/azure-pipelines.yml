@@ -31,9 +31,11 @@ steps:
 - task: CmdLine@2
   inputs:
     script: |
+      mv $(Build.SourcesDirectory)/../multisocialpostgui $(Build.SourcesDirectory)/multisocialpostgui
       pwd
       ls
-      mv $(Build.SourcesDirectory)/../multisocialpostgui $(Build.SourcesDirectory)/multisocialpostgui
+      ls $(Build.SourcesDirectory)/multisocialpostgui
+      
 
 - task: PowerShell@2
   inputs:
