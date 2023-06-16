@@ -47,7 +47,7 @@ steps:
       docker-compose build multisocialpostgui 
 
       echo "Listnando imagenees"     
-      docker images ls
+      docker images
             
       echo "Guardando IMAGEN"
 
