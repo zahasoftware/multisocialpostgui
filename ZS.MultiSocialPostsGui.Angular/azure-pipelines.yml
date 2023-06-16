@@ -49,8 +49,9 @@ steps:
       echo "Listnando imagenees"     
       docker images
             
-      $version = $(cat docker-compose.yml  | grep "multisocialpostgui:" | awk -F':'  '{print $3}')"
-      echo "Guardando IMAGEN $version 
+      $version = $(cat docker-compose.yml  | grep "multisocialpostgui:" | awk -F':'  '{print $3}')
+      echo "Guardando IMAGEN $version"
+      
       docker save -o multisocialpostgui.tar multisocialpostgui:$version
       docker save -o multisocialpostgui.tar multisocialpostgui:$version
       
