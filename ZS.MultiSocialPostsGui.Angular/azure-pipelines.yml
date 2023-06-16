@@ -50,10 +50,10 @@ steps:
       docker images
             
       $version = $(cat docker-compose.yml  | grep "multisocialpostgui:" | awk -F':'  '{print $3}')
-      echo "Guardando IMAGEN $version"
+      #echo "Guardando IMAGEN $version"
       
-      docker save -o multisocialpostgui.tar multisocialpostgui:$version
-      docker save -o multisocialpostgui.tar multisocialpostgui:$version
+      docker save -o asdf.tar ubuntu:18.04
+      docker save -o asdf_ctm.tar multisocialpostgui:1.0
       
       echo "LS TARS"
       mkdir -p images
