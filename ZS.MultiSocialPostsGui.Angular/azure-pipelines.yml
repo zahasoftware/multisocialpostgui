@@ -52,7 +52,7 @@ steps:
       $version = $(cat docker-compose.yml  | grep "multisocialpostgui:" | awk -F':'  '{print $3}')
       #echo "Guardando IMAGEN $version"
       
-      docker save -o output.tar multisocialpostgui:$version
+      docker save -o output.tar "multisocialpostgui:$version"
       
       echo "LS TARS"
       mkdir -p images
