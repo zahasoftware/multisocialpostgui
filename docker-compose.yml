@@ -1,8 +1,0 @@
-version: '3.4'
-
-services:
-  zs.multisocialpostsgui:
-    image: ${DOCKER_REGISTRY-}zsmultisocialpostsgui
-    build:
-      context: .
-      dockerfile: ZS.MultiSocialPostsGui.Angular/Dockerfile
